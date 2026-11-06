@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>TD7 - RA : Image Tracking (NFT)</title>
+    <title>TD7 - RA : Image Tracking NFT Singe</title>
     <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     <style>
@@ -30,29 +30,34 @@
   <body style="margin : 0px; overflow: hidden;">
     <!-- Minimal loader shown until image descriptors are loaded -->
     <div class="arjs-loader">
-      <div>Loading, please wait...</div>
+      <div>Chargement des descripteurs de l'image...</div>
     </div>
+
     <a-scene
       vr-mode-ui="enabled: false;"
       renderer="logarithmicDepthBuffer: true;"
       embedded
       arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
     >
+      <!-- a-nft pointant vers le chemin "singe" (sans .fset/.iset/.fset3) -->
       <a-nft
         type="nft"
-        url="https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/trex-image/trex"
+        url="singe"
         smooth="true"
         smoothCount="10"
         smoothTolerance=".01"
         smoothThreshold="5"
       >
+        <!-- Modèle 3D monkey.gltf superposé au-dessus de l'image -->
         <a-entity
-          gltf-model="https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
-          scale="5 5 5"
-          position="50 150 0"
+          gltf-model="monkey.gltf"
+          scale="50 50 50"
+          position="0 0 0"
+          rotation="-90 0 0"
         >
         </a-entity>
       </a-nft>
+
       <a-entity camera></a-entity>
     </a-scene>
   </body>
