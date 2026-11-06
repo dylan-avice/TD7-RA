@@ -1,40 +1,36 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TD7 - RA : Marqueurs Hiro & Personnalisé</title>
-  <!-- Framework 3D Web -->
-  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-  <!-- Extension AR.js (Basée sur les marqueurs) -->
-  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TD7 - RA : Marqueurs Hiro & Personnalisé</title>
+    <!-- Framework 3D Web -->
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <!-- Extension AR.js (Basée sur les marqueurs) -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 </head>
+
 <body style="margin: 0px; overflow: hidden;">
-  <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+    <a-scene embedded arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;">
 
-    <!-- 1. MARQUEUR HIRO CLASSIQUE -->
-    <a-marker preset="hiro">
-      <!-- Modèle 3D monkey.gltf affiché sur le code Hiro -->
-      <a-entity 
-        gltf-model="monkey.gltf" 
-        position="0 0.5 0" 
-        scale="0.3 0.3 0.3">
-      </a-entity>
-    </a-marker>
+        <!-- 1. MARQUEUR HIRO CLASSIQUE -->
+        <a-marker preset="hiro">
+            <!-- Modèle 3D monkey.gltf affiché sur le code Hiro -->
+            <a-entity gltf-model="monkey.gltf" position="0 0.5 0" scale="0.3 0.3 0.3">
+            </a-entity>
+        </a-marker>
 
-    <!-- 2. MARQUEUR PERSONNALISÉ (.patt) -->
-    <a-marker type="pattern" url="pattern-monmarqueur.patt">
-      <!-- On réutilise le même modèle monkey.gltf (ou une forme simple) -->
-      <a-entity 
-        gltf-model="monkey.gltf" 
-        position="0 0.5 0" 
-        scale="0.3 0.3 0.3"
-        rotation="0 180 0">
-      </a-entity>
-    </a-marker>
+        <!-- 2. MARQUEUR PERSONNALISÉ (.patt) -->
+        <a-marker type="pattern" url="pattern-monmarqueur.patt">
+            <!-- On réutilise le même modèle monkey.gltf (ou une forme simple) -->
+            <a-entity gltf-model="monkey.gltf" position="0 0.5 0" scale="0.3 0.3 0.3" rotation="0 180 0">
+            </a-entity>
+        </a-marker>
 
-    <!-- Caméra virtuelle -->
-    <a-entity camera></a-entity>
-  </a-scene>
+        <!-- Caméra virtuelle -->
+        <a-entity camera></a-entity>
+    </a-scene>
 </body>
+
 </html>
