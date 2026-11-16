@@ -1,64 +1,62 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>TD7 - RA : Image Tracking NFT Singe</title>
     <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     <style>
-      .arjs-loader {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.8);
-        z-index: 9999;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+        .arjs-loader {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-      .arjs-loader div {
-        text-align: center;
-        font-size: 1.25em;
-        color: white;
-      }
+        .arjs-loader div {
+            text-align: center;
+            font-size: 1.25em;
+            color: white;
+        }
     </style>
-  </head>
-  <body style="margin : 0px; overflow: hidden;">
-    <!-- Minimal loader shown until image descriptors are loaded -->
+</head>
+
+<body style="margin:0; overflow:hidden;">
     <div class="arjs-loader">
-      <div>Chargement des descripteurs de l'image...</div>
+        <div>Loading, please wait...</div>
     </div>
 
     <a-scene
-      vr-mode-ui="enabled: false;"
-      renderer="logarithmicDepthBuffer: true;"
-      embedded
-      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+     vr-mode-ui="enabled: false;"
+     renderer="logarithmicDepthBuffer: true;"
+     embedded
+     arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
     >
-      <!-- a-nft pointant vers le chemin "singe" (sans .fset/.iset/.fset3) -->
-      <a-nft
-        type="nft"
-        url="singe"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance=".01"
-        smoothThreshold="5"
-      >
-        <!-- Modèle 3D monkey.gltf superposé au-dessus de l'image -->
-        <a-entity
-          gltf-model="monkey.gltf"
-          scale="50 50 50"
-          position="0 0 0"
-          rotation="-90 0 0"
-        >
-        </a-entity>
-      </a-nft>
 
-      <a-entity camera></a-entity>
+        <a-nft
+         type="nft" 
+         url="https://dylan-avice.github.io/TD7-RA/singe"
+         smooth="true"
+         smoothCount="10"
+         smoothTolerance=".01"
+         smoothThreshold="5"
+        >
+
+            <a-entity
+             gltf-model="monkey.gltf"
+             position="145 145 40"
+             scale="50 50 50"
+            >
+            </a-entity>
+        </a-nft>
+        <a-entity camera></a-entity>
     </a-scene>
-  </body>
+</body>
 </html>
