@@ -22,30 +22,25 @@
       embedded
       arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
 
-      <a-nft type="nft" url="singe" smooth="true" smoothCount="10"
-             smoothTolerance=".01" smoothThreshold="5">
+      <a-nft
+        type="nft"
+        url="https://dylan-avice.github.io/TD7-RA/singe"
+        smooth="true"
+        smoothCount="10"
+        smoothTolerance=".01"
+        smoothThreshold="5">
 
-        <!-- TEST : cube rouge au centre de l'image (à supprimer ensuite) -->
+        <!-- Cube de test : à supprimer quand le singe s'affiche -->
         <a-box position="145 145 0" scale="60 60 60" color="red"></a-box>
 
-        <!-- Singe placé comme le T-rex : pas de rotation -->
-        <a-entity gltf-model="monkey.gltf"
-                  position="145 145 40"
-                  scale="50 50 50"></a-entity>
+        <a-entity
+          gltf-model="monkey.gltf"
+          position="145 145 40"
+          scale="50 50 50">
+        </a-entity>
       </a-nft>
 
       <a-entity camera></a-entity>
     </a-scene>
-
-    <script>
-      // Vérifie que les 3 descripteurs sont bien trouvés sur GitHub Pages
-      ['fset', 'fset3', 'iset'].forEach(ext => {
-        fetch('singe.' + ext).then(r => {
-          if (!r.ok) alert('Fichier introuvable : singe.' + ext + ' (erreur ' + r.status + ')');
-        });
-      });
-      document.querySelector('[gltf-model]').addEventListener('model-error', () =>
-        alert('monkey.gltf ne se charge pas'));
-    </script>
   </body>
 </html>
